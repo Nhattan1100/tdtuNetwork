@@ -1,0 +1,18 @@
+<div class="container add-user-container">
+    <h2>Thay đổi thông tin</h2>
+    <div class="add-user-form">
+        <div class="callout callout-danger hide">
+            <h4>Mật khẩu cũ không đúng !</h4>
+        </div>
+
+        <form id="formChangeInformation">
+            <img src="<%- user.Image%>" name="avatar" id="imgAvatar" alt="">
+            <input accept="image/x-png,image/gif,image/jpeg" id="inputAvatar" type="file" name="fileinput"/>
+            <input type="text" name="txtCName" id="txtCName" placeholder="Nhập họ và tên" value="<%- user.Name%>">
+            <input type="text" name="txtCClass" id="txtCClass" placeholder="Nhập lớp học" value="<%- user.google.Class%>">
+            <input type="text" name="txtCFacility" id="txtCFacility" placeholder="Nhập khoa" value="<%- user.google.Facility%>">
+
+            <button class="btn-submit" type="submit" id="btnChangeInformation">Cập nhật</button>
+        </form>
+    </div>
+</div>

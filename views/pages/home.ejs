@@ -1,0 +1,130 @@
+<div class="container-fluid newsfeed-container">
+    <div class="row post-wrapper">
+        <div class="col-12 col-lg-9">
+            <div class="main">
+                <!--                Post-->
+                <div class="post-container">
+                    <div class="row">
+                        <div class="col-2 col-lg-1">
+                            <img src="<%- user.Image %>" class="img-circle-post" alt="">
+                        </div>
+                        <div class="col-10 col-lg-11">
+                            <button id="btnPostPopUp" class="btn-trigger-post text-left">
+                                Xin chào
+                                <%- user.Name %>
+                                , bạn đang nghĩ gì thế ?
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="btnRefresh" class="btn-refresh center hide"><i class="fas fa-redo"></i> Làm mới</button>
+            <div id="loadTopPost" class="center hide">
+                <div class="lds-ellipsis">
+                    <div class="1child"></div>
+                    <div class="2child"></div>
+                    <div class="3child"></div>
+                    <div class="4child"></div>
+                </div>
+            </div>
+            <div class="newsfeed-post">
+                <!--                Bài đăng-->
+            </div>
+            <div id="loadBottomPost" class="center invisible">
+                <div class="lds-ellipsis">
+                    <div class="1child"></div>
+                    <div class="2child"></div>
+                    <div class="3child"></div>
+                    <div class="4child"></div>
+                </div>
+            </div>
+        </div>
+        <div class="notification-sidebar-container col-0 col-lg-3">
+            <div class="sidebar-notification notification-head">
+                <b class="tittle">Thông báo</b>
+                <br>
+                <a href="/allnotification">Xem tất cả thông báo</a>
+            </div>
+            <div class="sidebar-notification notification-body">
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-post hide">
+        <div class="container">
+            <div class="post-head">
+                <h4><b id="postTittle">Tạo bài viết</b></h4>
+                <button id="btnClose">X</button>
+            </div>
+            <hr>
+            <div class="post-info">
+                <input type="hidden" id="postId">
+                <img id="imgAvaterPost" src="<%- user.Image %>" class="img-circle-post" alt="">
+                <span id="txtPostUser"><%- user.Name %></span>
+            </div>
+            <div class="post-body">
+                <div class="form">
+                    <div class="post-content">
+                        <input type="hidden" id="userId" value="<%- user._id %>">
+                        <textarea id="textPost" rows="4" cols="50"
+                                  placeholder="Xin chào <%- user.Name %>, bạn đang nghĩ gì thế ?"></textarea>
+                        <img src="" id="imgPost" class="gallery" alt="">
+                        <input type="hidden" id="videoYoutube">
+                        <iframe class="hide" id="iframeYoutube" src=""></iframe>
+                    </div>
+
+                    <div class="row btn-group">
+                        <div class="col-6">
+                            <input type="file" accept="image/x-png,image/gif,image/jpeg" id="inputPostImage" hidden>
+                            <button class="btn-primary " id="btnAddImage"><i class="fas fa-images"></i> Thêm hình ảnh
+                            </button>
+                            <button class="btn-primary hide" id="btnDelImage"><i class="fas fa-trash-alt"></i> Xoá hình
+                                ảnh
+                            </button>
+
+                        </div>
+                        <div class="col-6">
+                            <button class="btn-danger" id="btnVideoToggle" data-toggle="collapse"
+                                    data-target="#collapseURL"><i class="fab fa-youtube"></i> Thêm video
+                            </button>
+                            <button class="btn-danger hide" id="btnDelVideo"><i class="fas fa-trash-alt"></i> Xoá video
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row collapse" id="collapseURL">
+                        <input id="inputYURL" type="url" placeholder="Nhập vào đường dẫn youtube">
+                        <button id="btnVideoOK" class="btn-primary">OK</button>
+                    </div>
+
+                    <button class="btn-post not-allow" id="btnPost">Đăng bài</button>
+                    <button class="btn-post btn-primary hide" id="btnEdit">Chỉnh sửa</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="popup popup-comment hide">
+        <div class="container">
+            <div class="post-head">
+                <h4><b id="postTittle">Sửa bình luận</b></h4>
+                <button id="btnCloseComment">X</button>
+            </div>
+            <hr>
+            <div class="post-body">
+                <div class="form">
+                    <div class="post-content">
+                        <input type="hidden" id="id" value="<%- user._id %>">
+                        <input type="text" id="inputEditComment" placeholder="Nhập bình luận ...">
+                    </div>
+
+                    <button class="btn-post btn-primary" id="btnEditComment">Chỉnh sửa</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

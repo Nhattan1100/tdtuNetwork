@@ -1,0 +1,42 @@
+<div class="container add-user-container">
+    <h2>Tạo tài khoản</h2>
+
+    <div class="add-user-form">
+        <form id="formAddUser">
+            <img src="../images/admin.ico" name="avatar" id="imgAvatar" alt="">
+            <input accept="image/x-png,image/gif,image/jpeg" id="inputAvatar" type="file" name="fileinput"/>
+            <input type="text" name="txtAName" id="txtAName" placeholder="Nhập tên phòng khoa">
+                <input type="text" name="txtAUsername" id="txtAUsername" placeholder="Nhập tên tài khoản">
+            <input type="password" name="txtAPassword" id="txtAPassword" placeholder="Nhập mật khẩu">
+            <div class="multi-select-container">
+                <select name="selectCategories" id="selectCategories" class="select-categories" title="Chọn một hoặc nhiều chuyên mục sau ..." multiple data-selected-text-format="static">
+                    <option value="Phòng Công tác học sinh sinh viên">Phòng Công tác học sinh sinh viên</option>
+                    <option value="Phòng Đại học">Phòng Đại học</option>
+                    <option value="Phòng Sau đại học">Phòng Sau đại học</option>
+                    <option value="Phòng điện toán và máy tính">Phòng điện toán và máy tính</option>
+                    <option value="Phòng khảo thí và kiểm định chất lượng">Phòng khảo thí và kiểm định chất lượng</option>
+                    <option value="Phòng tài chính">Phòng tài chính</option>
+                    <option value="TDT Creative Language Center">TDT Creative Language Center</option>
+                    <option value="Trung tâm tin học">Trung tâm tin học</option>
+                    <option value="Trung tâm đào tạo phát triển xã hội">Trung tâm đào tạo phát triển xã hội</option>
+                    <option value="Trung tâm phát triển Khoa học quản lý và Ứng dụng công nghệ">Trung tâm phát triển Khoa học quản lý và Ứng dụng công nghệ</option>
+                    <option value="Trung tâm hợp tác doanh nghiệp và cựu sinh viên">Trung tâm hợp tác doanh nghiệp và cựu sinh viên</option>
+                    <option value="Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa">Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa</option>
+                    <option value="Viện chính sách kinh tế và kinh doanh">Viện chính sách kinh tế và kinh doanh</option>
+                    <option value="Khoa Luật">Khoa Luật</option>
+                    <option value="Khoa Mỹ thuật công nghiệp">Khoa Mỹ thuật công nghiệp</option>
+                    <option value="Khoa Điện – Điện tử">Khoa Điện – Điện tử</option>
+                    <option value="Khoa Công nghệ thông tin">Khoa Công nghệ thông tin</option>
+                    <option value="Khoa Quản trị kinh doanh">Khoa Quản trị kinh doanh</option>
+                    <option value="Khoa Môi trường và bảo hộ lao động">Khoa Môi trường và bảo hộ lao động</option>
+                    <option value="Khoa Lao động công đoàn">Khoa Lao động công đoàn</option>
+                    <option value="Khoa Tài chính ngân hàng">Khoa Tài chính ngân hàng</option>
+                    <option value="Khoa giáo dục quốc tế">Khoa giáo dục quốc tế</option>
+                </select>
+            </div>
+            <p id="selectValidate">Vui lòng chọn ít nhất một chuyên mục !</p>
+
+            <button class="btn-submit" type="submit" id="btnAdduser">Tạo mới</button>
+        </form>
+    </div>
+</div>

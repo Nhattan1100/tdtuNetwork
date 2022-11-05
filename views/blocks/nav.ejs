@@ -1,0 +1,139 @@
+<body>
+<nav class="sticky-nav navbar sticky-top navbar-light bg-primary">
+    <div class="container-fluid">
+        <button class="btn-toggle-sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!--sidebar-->
+        <div class="sidebar">
+            <div class="p-2 bg-dark">
+                <a id="logo" class="d-flex justify-content-center">
+                    <span class="logo-text">TDTU</span>
+                </a>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav">
+                    <li class="user-panel">
+                        <div class="thumb">
+                            <img src="<%- user.Image %>" class="img-circle" alt="">
+                        </div>
+                        <div class="info">
+                            <ul class="list-inline">
+                                <span>
+                                        <%- user.Name %>
+                                </span>
+                                <li>
+                                    <a href="/logout" data-hover="tooltip" title="Đăng xuất">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fas fa-home"></i>
+                            <span class="menu-title">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="fas fa-user"></i>
+                            <span class="menu-title">Quản lý</span>
+                            <span><i class="fas fa-chevron-left rotate"></i></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse in1">
+                            <% if (user.userGroup == 0){ %>
+                                <li>
+                                    <a href="/adduser">
+                                        <i class="fas fa-user-plus"></i>
+                                        <span class="menu-title">Tạo tài khoản</span>
+                                    </a>
+                                </li>
+                            <% } %>
+                            <% if(user.userGroup == 1){ %>
+                                    <li>
+                                        <a href="/changepassword">
+                                            <i class="fas fa-key"></i>
+                                            <span class="menu-title">Thay đổi mật khẩu</span>
+                                        </a>
+                                    </li>
+                            <% } %>
+                            <% if(user.userGroup == 2){ %>
+                                    <li>
+                                        <a href="/changeinformation">
+                                            <i class="fas fa-user-edit"></i>
+                                            <span class="menu-title">Thay đổi thông tin cá nhân</span>
+                                        </a>
+                                    </li>
+                            <% } %>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a>
+                            <i class="fas fa-list"></i>
+                            <span class="menu-title">Thông báo</span>
+                            <span><i class="fas fa-chevron-left rotate"></i></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse in1">
+                            <% if (user.userGroup !== 2){ %>
+                                <li>
+                                    <a href="/addnotification">
+                                        <i class="fas fa-users"></i>
+                                        <span class="menu-title">Tạo thông báo</span>
+                                    </a>
+                                </li>
+                            <% } %>
+
+                            <li>
+                                <a href="/allnotification">
+                                    <i class="fas fa-list"></i>
+                                    <span class="menu-title">Tất cả thông báo</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="right-nav">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="<%- user.Image %>" class="img-circle" alt="">
+                    <%- user.Name %>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a class="dropdown-item" href="/logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Đăng xuất
+                        </a>
+                        <% if(user.userGroup == 1){ %>
+                            <a class="dropdown-item" href="/changepassword">
+                                <i class="fas fa-key"></i>
+                                Thay đổi mật khẩu
+                            </a>
+                        <% } %>
+                        <% if(user.userGroup == 2){ %>
+                            <a class="dropdown-item" href="/changeinformation">
+                                <i class="fas fa-user-edit"></i>
+                                Cập nhật thông tin cá nhân
+                            </a>
+                        <% } %>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" type="button" aria-expanded="false">
+                <a href="/">TRANG CHỦ</a>
+            </button>
+        </div>
+    </div>
+</nav>

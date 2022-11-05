@@ -1,0 +1,20 @@
+<div class="container add-notification-container">
+    <h2>Chỉnh sửa thông báo</h2>
+    <div class="add-notification-form">
+        <div class="callout callout-danger hide">
+            <h4>Mật khẩu cũ không đúng !</h4>
+        </div>
+
+        <div id="formEditNotification">
+            <input type="text" name="txtENotiTittle" id="txtENotiTittle" placeholder="Nhập tiêu đề thông báo" required>
+            <select name="EselectDepartment" id="EselectDepartment">
+                <option selected disabled hidden>--- Chọn phòng ban / khoa để đăng thông báo ---</option>
+                <% user.local.From.forEach((form)=>{%>
+                    <option value="<%- form%>"><%- form%></option>
+                <%})%>
+            </select>
+            <div id="editorNotification"></div>
+            <button class="btn-submit" id="btnEditNotification">Sửa thông báo</button>
+        </div>
+    </div>
+</div>
